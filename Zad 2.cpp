@@ -10,7 +10,7 @@ int main() {
   cin >> d2;
   cin >> i3;
 
-cout << s1 << endl;
+cout << s1 << "\n";
 cout << endl;
 cout << d2 << endl;
 cout << endl;
