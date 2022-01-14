@@ -1,0 +1,65 @@
+#include <iostream>
+# include "vector"
+
+using namespace std;
+
+struct Student{
+    string name;
+    string surname;
+    vector<float> marks;
+    Student(string a, string b, vector<float> c){
+        name = a;
+        surname = b;
+        copy(c.begin(), c.end(), back_inserter(marks));
+    }
+};
+struct Group{
+    string nameOfGroup;
+    vector<Student> vectorOfStudents;
+
+    Group(string a, vector<Student> b){
+        nameOfGroup = a;
+        copy(b.begin(), b.end(), back_inserter(vectorOfStudents));
+    }
+};
+
+float findMiddleMark(Student student){
+    int result = 0;
+    for (int i = 0; i < student.marks.size(); ++i) {
+        result += student.marks[i];
+    }
+    return result / student.marks.size();
+
+}
+float findMiddleMarkOfGroup(vector<Student> sV){
+    int result = 0;
+    for (int i = 0; i < sV.size(); ++i) {
+        result += findMiddleMark(sV[0]);
+    }
+    return result / sV.size();
+}
+string best_groups_name(vector<Group> vG){ // error
+    int bestIndex = 0;
+   
+    return vG[bestIndex].nameOfGroup;
+}
+
+auto main() -> int{
+    Student student1 = Student("Yarek1","Panchenko1",{3,4,5});
+    Student student2 = Student("Yarek2","Panchenko2",{3,4,5,4,2});
+    vector<Student> vectorOfStudents1 ={student1,student2};
+    Group firstGroup = Group("FirstGroup",vectorOfStudents1);
+
+    Student student3 = Student("Yarek3","Panchenko3",{20});
+    Student student4 = Student("Yarek4","Panchenko5",{10});
+    vector<Student> vectorOfStudents2 ={student3,student4};
+    Group seconttGroup = Group("SecondGroup",vectorOfStudents1);
+
+    vector<Group> listOfGroups ={firstGroup,seconttGroup};
+
+
+    cout << best_groups_name(listOfGroups) << endl;
+
+
+    return 0;
+}
