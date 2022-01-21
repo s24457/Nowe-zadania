@@ -1,0 +1,29 @@
+#include <iostream>
+# include "vector"
+
+using namespace std;
+
+void print(char a, char b){
+    for (int i = (int)a ; i <= (int)b ; ++i) {
+        cout << (char)i;
+    }
+    cout << endl;
+}
+
+
+auto main() -> int{
+   vector<char> vec;
+   char aa;
+   int i = 0;
+   do{
+       cin >> aa;
+       vec.push_back(aa);
+       i++;
+   } while (vec[i] != 'S' );
+
+    for (int j = 0; j < vec.size(); j+=2) {
+         print(vec[j],vec[j+1]);
+         cout << endl;
+    }
+    return 0;
+}
