@@ -12,18 +12,20 @@ void print(char a, char b){
 
 
 auto main() -> int{
-   vector<char> vec;
-   char aa;
-   int i = 0;
-   do{
-       cin >> aa;
-       vec.push_back(aa);
-       i++;
-   } while (vec[i] != 'S' );
+    vector<char> vec;
+    char aa;
+    int i = 0;
+    do{
+       cin >>aa;
+        if (aa == 'S'){break;}
+        else{
+            vec.push_back(aa);
+            i++;
+        }
+    } while (true );
 
-    for (int j = 0; j < vec.size(); j+=2) {
-         print(vec[j],vec[j+1]);
-         cout << endl;
+    for (int j = 0; j < vec.size()-1; ++j) {
+        print(vec[j], vec[j+1]);
     }
     return 0;
 }
