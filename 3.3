@@ -1,0 +1,25 @@
+#include <iostream>
+# include "vector"
+
+using namespace std;
+
+class Punkt{
+private: int x;
+private:int y;
+public:
+    void change (int a, int b){
+        x = a;
+        y = b;
+    }
+
+    int get_x(){return x;}
+    int get_y(){return y;}
+};
+
+auto main() -> int{
+ Punkt one, two;
+ one.change(1,4);
+ two.change(5,4);
+cout << one.get_x() << " " << one.get_y() << endl;
+    return 0;
+}
