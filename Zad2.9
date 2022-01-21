@@ -1,0 +1,26 @@
+#include <iostream>
+# include "vector"
+
+using namespace std;
+
+bool contains_all(vector<int> a, vector<int> b){
+    int f =0;
+    for (int i = 0; i < a.size() ; ++i) {
+        for (int j = 0; j <b.size() ; ++j) {
+            if (b[j] == a[i]){f++;}
+        }
+    }
+    if (f == b.size()) { return true; }
+    else { return false; }
+}
+
+auto main() -> int{
+  vector<int> aa = {1,2,3,4,5};
+  vector<int> bb = {1,2,5,2};
+    if (contains_all(aa, bb))cout << "tak" << endl;
+    else {
+        cout << "Nie" << endl;
+    }
+
+    return 0;
+}
