@@ -4,9 +4,16 @@
 using namespace std;
 
 void print(char a, char b){
-    for (int i = (int)a ; i <= (int)b ; ++i) {
-        cout << (char)i;
-    }
+   if (a < b){
+       for (int i = (int)a ; i <= (int)b ; ++i) {
+           cout << (char)i;
+       }
+   }
+   else{
+       for (int i = (int)b ; i <= (int)a ; ++i) {
+           cout << (char)i;
+       }
+   }
     cout << endl;
 }
 
@@ -16,7 +23,7 @@ auto main() -> int{
     char aa;
     int i = 0;
     do{
-       cin >>aa;
+        cin >>aa;
         if (aa == 'S'){break;}
         else{
             vec.push_back(aa);
